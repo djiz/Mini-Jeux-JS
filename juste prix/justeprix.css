@@ -1,0 +1,26 @@
+body {
+    max-width: 500px;
+    margin: auto;
+}
+.bandeau {
+    margin-top: 20px;
+    width: 100%;
+    max-height: 30vh;
+}
+#beginGame {
+    display: block;
+    background-color: bisque;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.propalInput {
+    text-align: center;
+    margin-top: 10px;
+}
+.buttonGo {
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
