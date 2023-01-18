@@ -4,11 +4,43 @@
 
 let numberToFind = 0;
 const resultDiv = document.getElementById('resultDiv');
+const timer     = document.getElementById('timer');
+let tempsRestant = 0;
+let compteurInterval = null;
+
 
 document.getElementById('beginGame').addEventListener('click', function() {
     // Lancer la partie
     // Récupérer un chiffre aléatoire
     numberToFind = getRandomInt(1000);
+    tempsRestant = 30;
+    if(compteurInterval != null) {
+        clearInterval(compteurInterval);
+    }
+        compteurInterval = setInterval(() => {
+            timer.innerText = tempsRestant + ' seconde(s) ';
+            tempsRestant--;
+            if(tempsRestant >= 20) {
+                timer.classList.remove('warning');
+                timer.classList.remove('danger');
+                timer.classList.add('cool');
+            }
+            else if(tempsRestant >= 10) {
+                timer.classList.remove('cool')
+                timer.classList.remove('danger')
+                timer.classList.add('warning')
+            }
+            else if(tempsRestant < 10) {
+                timer.classList.remove('cool');
+                timer.classList.remove('warning');
+                timer.classList.add('danger');
+            }
+            else if(tempsRestant < 0) {
+                clearInterval(compteurInterval);
+                // Partie terminée
+            }
+            
+        }, 1000);
 });
 
 document.getElementById('ckeckPropalButton').addEventListener('click', function() {
