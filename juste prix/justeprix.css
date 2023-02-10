@@ -25,33 +25,38 @@ body {
 }
 .reboursDiv {
     transition: 0.2s;
-    font-size: 15px;
+    font-size: 20px;
+    display: inline-block;
+    color: white;
+    border-radius: 35px;
+    padding: 15px;
+    font-weight: bold;
 }
 .reboursDiv.cool {
-    color: green;
+    background-color: green;
 }
 .reboursDiv.warning {
-    color: coral;
+    background-color: coral;
 }
 .reboursDiv.danger {
-    color: red;
+    background-color: red;
     animation: suspens 1s infinite;
+    padding: 7px 15px;
+}
+#GamePropalDiv {
+    display: none;
 }
 @keyframes suspens {
     0%, 100% {
         transform: rotate(0deg);
-        font-size: 15px;
+        font-size: 20px;
     }
-    25% {
-        transform: rotate(-45deg);
-        font-size: 18px;
+    33% {
+        transform: rotate(-30deg);
+        font-size: 23px;
     }
-    50% {
-        transform: rotate(0deg);
-        font-size: 18px;
-    }
-    75% {
-        transform: rotate(45deg);
-        font-size: 18px;
+    66% {
+        transform: rotate(30deg);
+        font-size: 23px;
     }
 }
